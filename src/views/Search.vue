@@ -1,1 +1,3 @@
-<template>Seach</template>
+<template>
+  <v-btn> Button </v-btn>
+</template>
