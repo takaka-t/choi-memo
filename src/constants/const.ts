@@ -1,5 +1,5 @@
 export namespace ScreenPath {
   export const LOGIN = "";
   export const SEARCH = "/Search";
-  export const REGIST = "/regist";
+  export const REGIST = "/Regist";
 }

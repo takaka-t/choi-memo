@@ -24,7 +24,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-main>
+    <v-main style="background-color: #aaebd5">
       <RouterView />
     </v-main>
   </v-app>
