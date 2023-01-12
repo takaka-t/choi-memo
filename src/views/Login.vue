@@ -5,32 +5,49 @@
   >
     ちょいメモ
   </h1>
-  <v-card style="width: 20%; height: 25%" class="ma-auto">
+  <v-card style="width: 20%; height: 33%" class="ma-auto">
     <v-card-text>
       <v-form>
         <v-text-field
+          class="my-5"
           prepend-icon="mdi-account-circle"
           label="ユーザ名"
-        /><v-text-field
+          v-model="name"
+        />
+        <v-text-field
+          class="mb-5"
+          :type="showPassword ? 'text' : 'password'"
+          @click:append="showPassword = !showPassword"
           prepend-icon="mdi-lock"
-          append-icon="mdi-eye-off"
+          :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           label="パスワード"
+          v-model="password"
         />
         <v-card-actions>
-          <v-btn color="info" variant="flat" class="ml-auto">ログイン</v-btn>
+          <v-btn color="info" variant="flat" class="ml-auto" @click="Submit"
+            >ログイン</v-btn
+          >
         </v-card-actions>
       </v-form>
     </v-card-text>
   </v-card>
 </template>
 
-<style>
-.v-toolbar__content {
-  display: none !important;
-}
-.v-main {
-  padding-top: 0 !important;
-}
-</style>
+<script setup lang="ts">
+import router from "@/router";
+import { ref } from "vue";
+import { ScreenNames } from "../constants/const";
 
-<script setup lang="ts"></script>
+//パスワードを見せるかどうか
+const showPassword = ref<boolean>(false);
+//ユーザー名
+const name = ref<String>("");
+//パスワード
+const password = ref<String>("");
+
+//ログインボタン押下時処理
+const Submit = () => {
+  //ログイン成功後、検索画面へ遷移
+  router.push(ScreenNames.SEARCH);
+};
+</script>

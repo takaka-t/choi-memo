@@ -1,29 +1,32 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>ちょいメモ</v-toolbar-title>
-    </v-app-bar>
+    <!--TODO:ログインしていないときは、navigationを表示しない-->
+    <div>
+      <v-app-bar app>
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-toolbar-title>ちょいメモ</v-toolbar-title>
+      </v-app-bar>
 
-    <!--ナビゲーション-->
-    <v-navigation-drawer v-model="drawer" temporary>
-      <v-list>
-        <v-list-subheader>もくじ</v-list-subheader>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :value="item"
-          :to="item.link"
-          active-color="primary"
-        >
-          <template v-slot:prepend>
-            <v-icon :icon="item.icon"></v-icon>
-          </template>
+      <!--ナビゲーション-->
+      <v-navigation-drawer v-model="drawer" temporary>
+        <v-list>
+          <v-list-subheader>もくじ</v-list-subheader>
+          <v-list-item
+            v-for="(item, i) in items"
+            :key="i"
+            :value="item"
+            :to="item.link"
+            active-color="primary"
+          >
+            <template v-slot:prepend>
+              <v-icon :icon="item.icon"></v-icon>
+            </template>
 
-          <v-list-item-title v-text="item.text"></v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+            <v-list-item-title v-text="item.text"></v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+    </div>
     <v-main style="background-color: #aaebd5">
       <RouterView />
     </v-main>
