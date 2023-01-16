@@ -41,11 +41,8 @@
           <v-btn color="primary">選択</v-btn>
         </v-col>
       </v-row>
-      <v-row>
-        <v-col cols="10"></v-col>
-        <v-col cols="2">
-          <v-btn color="primary">登録</v-btn>
-        </v-col>
+      <v-row class="justify-center">
+        <v-btn color="primary" large>登録</v-btn>
       </v-row>
     </v-container>
   </v-form>
