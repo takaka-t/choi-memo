@@ -1,46 +1,13 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/docker-existing-dockerfile
 {
-  // Remote-Containersを使ってVSCodeを開いたときのウィンドウのタイトル。何でもいい。
-  "name": "Existing Dockerfile",
-
-  // Sets the run context to one level up instead of the .devcontainer folder.
-  // 実行パスを指定。.devcontainerディレクトリの一階層上。
-  "context": "..",
-
-  // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-  // 標準の「Dockerfile」ファイル名を使用していない場合は、「dockerFile」プロパティを更新します。
-  "dockerFile": "../Dockerfile",
-
-  // リモート先のVS Codeにインストールする拡張機能
+  "name": "ChoiMemo",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "choi-memo",
+  "workspaceFolder": "/workspace",
+  //リモート先のvsCodeにインストールする拡張機能
   "extensions": [
-    "ms-ceintl.vscode-language-pack-ja",
+    "ms-ceintl.vscode-language-ja",
     "esbenp.prettier-vscode",
     "vue.volar",
-    "vue.vscode-typescript-vue-plugin",
-    "dbaeumer.vscode-eslint"
+    "vue.vscode-typescript-vue-plugin"
   ]
-
-  // ローカルの3000番ポートとコンテナの3000番ポートを接続。
-  // "appPort": ["3000:3000"]
-
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // 「forwardPorts」を使用して、コンテナー内のポートのリストをローカルで使用できるようにします。
-  // "forwardPorts": [],
-
-  // Uncomment the next line to run commands after the container is created - for example installing curl.
-  // 次の行のコメントを外して、コンテナーの作成後にコマンドを実行します (例: curl のインストール)。
-  // "postCreateCommand": "apt-get update && apt-get install -y curl",
-
-  // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
-  // C++、Go、Rust などの ptrace ベースのデバッガーを使用する場合は、コメントを解除します。
-  // "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
-
-  // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
-  // コンテナー内から Docker CLI を使用するには、コメントを外します。 https://aka.ms/vscode-remote/samples/docker-from-docker を参照してください。
-  // "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
-
-  // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
-  // root 以外のユーザーを追加した場合は、コメントを外して非 root ユーザーとして接続します。 https://aka.ms/vscode-remote/containers/non-root を参照してください。
-  // "remoteUser": "vscode"
 }

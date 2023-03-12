@@ -6,5 +6,13 @@
   // フォーマッターをprettierに設定
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // 保存時にフォーマット
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  //prettier設定
+  "prettier.printWidth": 200,
+  //JsonはvsCodeのデフォルトフォーマッターを利用
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  //typescriptのSDKを現在ディレクトリのものに設定
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
