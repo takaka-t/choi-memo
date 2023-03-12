@@ -11,7 +11,3 @@ export namespace ScreenNames {
   export const SEARCH = "Search";
   export const REGIST = "Regist";
 }
-
-export namespace Color {
-  export const COMMON_BACKGROUND_COLOR = "#aaebd5";
-}
