@@ -1,7 +1,12 @@
-import { createApp } from "vue";
+//pinia
 import { createPinia } from "pinia";
+import { createPersistedState } from "pinia-plugin-persistedstate";
 
+//vue
+import { createApp } from "vue";
 import App from "./App.vue";
+
+//router
 import router from "./router";
 
 //vuetify
@@ -50,8 +55,11 @@ const vuetify = createVuetify({
   },
 });
 const app = createApp(App);
+const pinia = createPinia();
 
+pinia.use(createPersistedState());
 app.use(createPinia());
 app.use(router);
+app.use(vuetify);
 app.use(errorHandler);
 app.mount("#app");
