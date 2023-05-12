@@ -3,11 +3,36 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "choi-memo",
   "workspaceFolder": "/workspace",
-  //リモート先のvsCodeにインストールする拡張機能
-  "extensions": [
-    "ms-ceintl.vscode-language-ja",
-    "esbenp.prettier-vscode",
-    "vue.volar",
-    "vue.vscode-typescript-vue-plugin"
-  ]
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // 括弧記号色付け機能
+        "editor.bracketPairColorization.enabled": true,
+        // 改行コードを設定
+        "files.eol": "\n",
+        // 保存時にフォーマット
+        "editor.formatOnSave": true,
+        // フォーマッターをprettierに設定
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // prettier設定
+        "prettier.printWidth": 200,
+        // jsonはVSCodeのデフォルトフォーマッターを利用
+        "[jsonc]": {
+          "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        // typescriptのSDKを現在ディレクトリのに指定
+        "typescript.tsdk": "node_modules/typescript/lib"
+      },
+      "extensions": [
+        // VSCode日本語化
+        "MS-CEINTL.vscode-language-pack-ja",
+        // フォーマッター
+        "esbenp.prettier-vscode",
+        // Vuejs開発用
+        "Vue.volar",
+        // VuejsをTypescriptで開発用
+        "Vue.vscode-typescript-vue-plugin"
+      ]
+    }
+  }
 }
